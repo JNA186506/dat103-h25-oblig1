@@ -46,3 +46,20 @@ grep "Stage" $directory/grieg.txt
 print_dash
 
 awk -F ',' '$3 >= 1870 { print $0 }' $directory/grieg.txt
+
+print_dash
+
+touch $directory/vocal.txt | grep 'Vocal' edvard.txt > $directory/vocal.txt
+cat $directory/vocal.txt
+
+print_dash
+
+touch $directory/piano.txt | grep 'Piano' edvard.txt > $directory/piano.txt
+cat $directory/piano.txt
+
+print_dash
+
+for file in ~/bashscript/*
+do
+	wc -l < $file
+done
