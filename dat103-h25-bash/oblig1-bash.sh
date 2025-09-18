@@ -59,7 +59,19 @@ cat $directory/piano.txt
 
 print_dash
 
+echo $heltall
+
 for file in ~/bashscript/*
 do
-	wc -l < $file
+	heltall=($(wc -l $file))
+	if [ $heltall -lt 3 ]; then
+		for i in $(seq 1 $heltall);
+		do
+			cp $file ${file%%.*}-$i.txt
+		done
+	fi
 done
+
+wc ~/bashscript/*
+
+print_dash
