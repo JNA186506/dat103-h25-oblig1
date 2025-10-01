@@ -14,7 +14,7 @@ public class SimulationTest {
 
     Map<Integer, List<Task>> arrivals;
     Simulation simulation;
-    private Integer test=1;  // DO NOT change this for Subtasks 1 and 2(a)
+    private Integer test=2;  // DO NOT change this for Subtasks 1 and 2(a)
                              // ONLY change the value from 1 to 2 for Subtask 2(b).
 
     @BeforeEach
@@ -79,7 +79,37 @@ public class SimulationTest {
         // Subtask 1: Write out expected view for 31 steps of Round Robin scheduling
 	// Assert Test 1
         assertThat(steps,contains(
-	
+			"T=0 Scheduled: T1 Ready: T2, T3",
+				"T=1 Scheduled: T1 Ready: T2, T3",
+				"T=2 Scheduled: T1 Ready: T2, T3, T4, T5",
+				"T=3 Scheduled: T1 Ready: T2, T3, T4, T5",
+				"T=4 Scheduled: T2 Ready: T3, T4, T5, T1",
+				"T=5 Scheduled: T2 Ready: T3, T4, T5, T1",
+				"T=6 Scheduled: T2 Ready: T3, T4, T5, T1, T6, T7",
+				"T=7 Scheduled: T3 Ready: T4, T5, T1, T6, T7",
+				"T=8 Scheduled: T4 Ready: T5, T1, T6, T7",
+				"T=9 Scheduled: T5 Ready: T1, T6, T7",
+				"T=10 Scheduled: T5 Ready: T1, T6, T7, T8",
+				"T=11 Scheduled: T5 Ready: T1, T6, T7, T8",
+				"T=12 Scheduled: T5 Ready: T1, T6, T7, T8",
+				"T=13 Scheduled: T1 Ready: T6, T7, T8",
+				"T=14 Scheduled: T6 Ready: T7, T8",
+				"T=15 Scheduled: T6 Ready: T7, T8",
+				"T=16 Scheduled: T6 Ready: T7, T8, T9, T10",
+				"T=17 Scheduled: T6 Ready: T7, T8, T9, T10",
+				"T=18 Scheduled: T7 Ready: T8, T9, T10, T6",
+				"T=19 Scheduled: T7 Ready: T8, T9, T10, T6",
+				"T=20 Scheduled: T7 Ready: T8, T9, T10, T6",
+				"T=21 Scheduled: T7 Ready: T8, T9, T10, T6",
+				"T=22 Scheduled: T8 Ready: T9, T10, T6",
+				"T=23 Scheduled: T8 Ready: T9, T10, T6",
+				"T=24 Scheduled: T9 Ready: T10, T6",
+				"T=25 Scheduled: T10 Ready: T6",
+				"T=26 Scheduled: T10 Ready: T6",
+				"T=27 Scheduled: T10 Ready: T6",
+				"T=28 Scheduled: T6 Ready: ",
+				"T=29 Scheduled: T6 Ready: ",
+				"T=30 Scheduled: Ready: "
         ));
 	break;
 	
@@ -148,9 +178,42 @@ public class SimulationTest {
 
 	// Subtask 2(b): Write out expected view for 31 steps of Round Robin scheduling
 	// Assert Test 2
-        assertThat(steps2,contains(        
-				   
-        ));
+        assertThat(steps2,contains(
+				"T=0 Scheduled: T1 Ready: T3, T2",
+				"T=1 Scheduled: T3 Ready: T2",
+				"T=2 Scheduled: T3 Ready: T2",
+				"T=3 Scheduled: T3 Ready: T2",
+				"T=4 Scheduled: T4 Ready: T5, T2, T6",
+				"T=5 Scheduled: T4 Ready: T5, T2, T6",
+				"T=6 Scheduled: T5 Ready: T2, T6",
+				"T=7 Scheduled: T5 Ready: T2, T6",
+				"T=8 Scheduled: T5 Ready: T2, T6",
+				"T=9 Scheduled: T5 Ready: T2, T6",
+				"T=10 Scheduled: T2 Ready: T6",
+				"T=11 Scheduled: T2 Ready: T6",
+				"T=12 Scheduled: T8 Ready: T2, T7, T6",
+				"T=13 Scheduled: T8 Ready: T2, T7, T6",
+				"T=14 Scheduled: T2 Ready: T7, T6",
+				"T=15 Scheduled: T2 Ready: T7, T6",
+				"T=16 Scheduled: T2 Ready: T9, T10, T7, T6",
+				"T=17 Scheduled: T9 Ready: T10, T7, T6",
+				"T=18 Scheduled: T10 Ready: T7, T6",
+				"T=19 Scheduled: T10 Ready: T7, T6",
+				"T=20 Scheduled: T10 Ready: T7, T6",
+				"T=21 Scheduled: T10 Ready: T7, T6",
+				"T=22 Scheduled: T7 Ready: T6",
+				"T=23 Scheduled: T7 Ready: T6",
+				"T=24 Scheduled: T7 Ready: T6",
+				"T=25 Scheduled: T7 Ready: T6",
+				"T=26 Scheduled: T7 Ready: T6",
+				"T=27 Scheduled: T6 Ready: ",
+				"T=28 Scheduled: T6 Ready: ",
+				"T=29 Scheduled: T6 Ready: ",
+				"T=30 Scheduled: T6 Ready: ",
+				"T=31 Scheduled: T6 Ready: ",
+				"T=32 Scheduled: T6 Ready: ",
+				"T=33 Scheduled: Ready: "
+		));
 	break;
 	}
     }             
